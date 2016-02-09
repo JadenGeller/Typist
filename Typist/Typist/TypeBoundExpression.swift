@@ -24,7 +24,7 @@ extension TypeBoundExpression: AugmentedExpressionType {
 }
 
 extension TypeBoundExpression {
-    // SHOULD NOT BE AN INIT
+    // SHOULD THIS BE AN INIT?
     public init(typing untyped: Expression, inout withTerms terms: [Term<TypeName>]) throws {
         try self.init(untyped) { untyped in
             let binding = Binding<Term<TypeName>>()
