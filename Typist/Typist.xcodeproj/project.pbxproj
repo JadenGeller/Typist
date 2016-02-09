@@ -16,7 +16,6 @@
 		4D48AC581C6A5E1C00D32D89 /* Axiomatic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D48AC551C6A5E1600D32D89 /* Axiomatic.framework */; };
 		4DA70B301C6A749F00426AE6 /* TypedExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA70B2F1C6A749F00426AE6 /* TypedExpression.swift */; };
 		4DA70B321C6A77FF00426AE6 /* ConcreteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA70B311C6A77FF00426AE6 /* ConcreteType.swift */; };
-		4DD9AD8E1C5EF47500252595 /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9AD8D1C5EF47500252595 /* Checker.swift */; };
 		4DD9ADA11C5EF4B000252595 /* TypistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9ADA01C5EF4B000252595 /* TypistTests.swift */; };
 		4DD9ADA31C5EF4B000252595 /* Typist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD9AD821C5EF46600252595 /* Typist.framework */; };
 /* End PBXBuildFile section */
@@ -57,7 +56,6 @@
 		4DA70B311C6A77FF00426AE6 /* ConcreteType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcreteType.swift; sourceTree = "<group>"; };
 		4DD9AD821C5EF46600252595 /* Typist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Typist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD9AD871C5EF46600252595 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4DD9AD8D1C5EF47500252595 /* Checker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Checker.swift; path = ../Checker.swift; sourceTree = "<group>"; };
 		4DD9AD9E1C5EF4B000252595 /* TypistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TypistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD9ADA01C5EF4B000252595 /* TypistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypistTests.swift; sourceTree = "<group>"; };
 		4DD9ADA21C5EF4B000252595 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 		4DD9AD841C5EF46600252595 /* Typist */ = {
 			isa = PBXGroup;
 			children = (
-				4DD9AD8D1C5EF47500252595 /* Checker.swift */,
 				4D48AC3E1C6A5B2C00D32D89 /* Literal.swift */,
 				4DA70B311C6A77FF00426AE6 /* ConcreteType.swift */,
 				4D48AC3A1C6A5AF800D32D89 /* Expressable.swift */,
@@ -273,7 +270,6 @@
 				4D48AC3F1C6A5B2C00D32D89 /* Literal.swift in Sources */,
 				4D48AC431C6A5B8A00D32D89 /* AugmentedExpressionType.swift in Sources */,
 				4D48AC3D1C6A5B0C00D32D89 /* ExpressionType.swift in Sources */,
-				4DD9AD8E1C5EF47500252595 /* Checker.swift in Sources */,
 				4DA70B301C6A749F00426AE6 /* TypedExpression.swift in Sources */,
 				4D48AC411C6A5B6900D32D89 /* Expression.swift in Sources */,
 			);
