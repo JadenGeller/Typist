@@ -20,6 +20,7 @@ extension Expression: CustomStringConvertible {
         case let .Application(function, argument):
             return "(" + function.description + " " + argument.description + ")"
         case let .Bare(word):
+     
             return word
         case let .Value(literal):
             return "\(literal)"
