@@ -9,6 +9,7 @@
 public protocol AugmentedExpressionType: ExpressionType {
     typealias Associated
     init(expression: Expressable<Self>, associatedValue: Associated)
+    var associatedValue: Associated { get set }
 }
 
 extension AugmentedExpressionType {
@@ -28,23 +29,11 @@ extension AugmentedExpressionType {
     }
 }
 
-/*
-
-public struct AugmentedExpression<Associated>: ExpressionType {
-    public let expression: Expressable<AugmentedExpression<Associated>>
-    public let metadata: Associated
-}
-
-extension AugmentedExpression {
-    public init(_ expression: Expression, computedValue: Expressable<AugmentedExpression> throws -> Associated) rethrows {
-        self.expression = try expression.expression.map{ try AugmentedExpression($0, computedValue: computedValue) }
-        self.metadata = try computedValue(self.expression)
-    }
-    
-    public init(_ expression: Expression, repeatedValue: Associated) {
-        self.metadata = repeatedValue
-        self.expression = expression.expression.map{ AugmentedExpression($0, repeatedValue: repeatedValue) }
+extension AugmentedExpressionType {
+    public init<A: AugmentedExpressionType>(_ expression: A, transform: A.Associated throws -> Associated) rethrows {
+        self.init(
+            expression: try expression.expression.map { try Self($0, transform: transform) },
+            associatedValue: try transform(expression.associatedValue)
+        )
     }
 }
-
-*/

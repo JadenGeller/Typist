@@ -21,6 +21,15 @@ extension TypeBoundExpression: AugmentedExpressionType {
         self.expression = expression
         self.binding = associatedValue
     }
+    
+    public var associatedValue: Binding<Term<TypeName>> {
+        get {
+            return binding
+        }
+        set {
+            binding = newValue
+        }
+    }
 }
 
 extension TypeBoundExpression {

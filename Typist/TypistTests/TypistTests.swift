@@ -54,6 +54,7 @@ class TypistTests: XCTestCase {
         try! system.enumerateMatches(terms) {
             XCTAssertEqual(Term(name: "function", arguments: [.Constant(Term(atom: "Int")), .Constant(Term(atom: "Int"))]), typed.binding.value)
             count++
+            print(try! TypedExpression(typed))
         }
         XCTAssertEqual(1, count)
     }
