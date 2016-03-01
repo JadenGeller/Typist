@@ -122,5 +122,6 @@ Let's see what our tree looks like!
     (square :: function<Int, Int>)
 ) :: function<Int, Int>)
 ```
+(Line breaks added by hand to make it easier to read...not sure it helped...)
 
 Kinda hard to see, but that's exactly what we want! We now have the types of every expression and every subexpression, so something like name mangling based on type should be easy-peasy!
