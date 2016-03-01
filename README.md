@@ -114,7 +114,13 @@ In our test, we'll check to make sure we only enumerate over one set of matches 
 
 Let's see what our tree looks like!
 ```
-(((((compose :: function<function<Int, Int>, function<function<Int, Int>, function<Int, Int>>>) (sqrt :: function<Int, Int>)) :: function<function<Int, Int>, function<Int, Int>>) (square :: function<Int, Int>)) :: function<Int, Int>)
+((
+    ((
+        (compose :: function<function<Int, Int>, function<function<Int, Int>, function<Int, Int>>>)
+        (sqrt :: function<Int, Int>)
+    ) :: function<function<Int, Int>, function<Int, Int>>)
+    (square :: function<Int, Int>)
+) :: function<Int, Int>)
 ```
 
 Kinda hard to see, but that's exactly what we want! We now have the types of every expression and every subexpression, so something like name mangling based on type should be easy-peasy!
