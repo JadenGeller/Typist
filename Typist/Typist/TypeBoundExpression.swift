@@ -48,8 +48,8 @@ extension TypeBoundExpression {
                     ]))
                 )
             case let .Bare(word):
-                // named(`word`, `binding`)
-                terms.append(Term(name: "named", arguments: [
+                // bound(`word`, `binding`)
+                terms.append(Term(name: "bound", arguments: [
                     .Constant(Term(atom: word)),
                     .Variable(binding)
                 ]))

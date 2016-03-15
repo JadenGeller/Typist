@@ -7,8 +7,10 @@
 //
 
 // TODO: Support non-functional expressions
-public enum Expressable<Recursive> {
-    indirect case Application(function: Recursive, argument: Recursive)
+
+/// Represnts the abstract syntax tree 
+public enum Expressable<This> {
+    indirect case Application(function: This, argument: This)
 //    indirect case Sequence([Recursive])
 //    indirect case Assign(name: String, value: Recursive)
     case Bare(String)
@@ -16,7 +18,7 @@ public enum Expressable<Recursive> {
 }
 
 extension Expressable {
-    public func map<V>(transform: Recursive throws -> V) rethrows -> Expressable<V> {
+    public func map<V>(transform: This throws -> V) rethrows -> Expressable<V> {
         switch self {
         case let .Application(function, argument):
             return Expressable<V>.Application(function: try transform(function), argument: try transform(argument))

@@ -14,11 +14,13 @@ import Gluey
 class TypistTests: XCTestCase {
     
     func testTypechecking() {
+        // compose sqrt square
+        // (compose sqrt) square
         let expression = Expression(.Application(function: Expression(.Application(function: Expression(.Bare("compose")), argument: Expression(.Bare("sqrt")))), argument: Expression(.Bare("square"))))
         
         let system = System(clauses: [
             // square :: Int -> Int
-            Clause(fact: Term(name: "named", arguments: [
+            Clause(fact: Term(name: "bound", arguments: [
                 .Constant(Term(atom: "square")),
                 .Constant(Term(name: "function", arguments: [
                     .Constant(Term(atom: "Int")),
@@ -26,7 +28,7 @@ class TypistTests: XCTestCase {
                 ]))
             ])),
             // sqrt :: Int -> Int
-            Clause(fact: Term(name: "named", arguments: [
+            Clause(fact: Term(name: "bound", arguments: [
                 .Constant(Term(atom: "sqrt")),
                 .Constant(Term(name: "function", arguments: [
                     .Constant(Term(atom: "Int")),
@@ -35,7 +37,7 @@ class TypistTests: XCTestCase {
             ])),
             // compose = f -> g -> x -> f (g x)
             Clause { A, B, C in (
-                fact: Term(name: "named", arguments: [
+                fact: Term(name: "bound", arguments: [
                     .Constant(Term(atom: "compose")),
                     .Constant(Term(name: "function", arguments: [
                         .Constant(Term(name: "function", arguments: [.Variable(B), .Variable(C)])),
